@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+         version="3.1">
+    <display-name>WebStore</display-name>
+ 
+    <context-param>
+        <param-name>JDBC_DRIVER</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>JDBC_URL</param-name>
+        <param-value>jdbc:mysql://localhost:3306/WebStore</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>JDBC_LOGIN</param-name>
+        <param-value>leonel</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>JDBC_PASSWORD</param-name>
+        <param-value>Boost2022@noname</param-value>
+    </context-param>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://koor.fr/tld/extratags</taglib-uri>
+			<taglib-location>/WEB-INF/extratags.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	
+	
+	<session-config>
+		<session-timeout>30</session-timeout><!-- Si on quitte sur le site après 30 minutes la session est détruite et on va se reconnecter -->
+	</session-config>
+
+    <welcome-file-list>
+        <welcome-file>login</welcome-file>
+    </welcome-file-list>
+
+</web-app>
